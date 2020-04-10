@@ -1,7 +1,7 @@
 {
-    "name": "cBit",
+    "name": "BMS",
     "version": "1.1.0",
-    "description": "Extension for ZYRobot micro:bit",
+    "description": "Extension for BMS micro:bit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
@@ -15,9 +15,6 @@
         "main.ts",
         "_locales/zh/cbit-strings.json"
 
-    ],
-    "testFiles": [
-        "test.ts"
     ],
     "public": true
 }

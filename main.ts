@@ -2,7 +2,7 @@
 R
 modified from liusen
 load dependency
-"cbit": "file:../pxt-cbit"
+"BMS": "file:../BMS20200410"
 */
 
 
