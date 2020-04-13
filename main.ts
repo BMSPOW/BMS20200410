@@ -2,7 +2,7 @@
 R
 modified from liusen
 load dependency
-"BMS": "file:../BMS20200413f"
+"BMS": "file:../BMS20200413"
 */
 
 
@@ -159,13 +159,13 @@ namespace BMS_CAR {
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="Right_Fwd"
+        //% blockId="Right_Z_Motor" block="Motor_R_For"
         Right_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="Right_Back"
+        //% blockId="Right_F_Motor" block="Motor_R_Back"
         Right_F_Motor = 2,
-        //% blockId="Left_Z_Motor" block="Left_Fwd"
+        //% blockId="Left_Z_Motor" block="Motor_L_For"
         Left_Z_Motor = 3,
-        //% blockId="Left_F_Motor" block="Left_Back"
+        //% blockId="Left_F_Motor" block="Motor_L_Back"
         Left_F_Motor = 4       
     }
 
