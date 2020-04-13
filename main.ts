@@ -159,13 +159,13 @@ namespace BMS_CAR {
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="Motor_R_For"
+        //% blockId="Right_Z_Motor" block="Right_Fwd"
         Right_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="Motor_R_Back"
+        //% blockId="Right_F_Motor" block="Right_Back"
         Right_F_Motor = 2,
-        //% blockId="Left_Z_Motor" block="Motor_L_For"
+        //% blockId="Left_Z_Motor" block="Left_Fwd"
         Left_Z_Motor = 3,
-        //% blockId="Left_F_Motor" block="Motor_L_Back"
+        //% blockId="Left_F_Motor" block="Left_Back"
         Left_F_Motor = 4       
     }
 
