@@ -1,7 +1,7 @@
 {
-    "name": "BMS",
+    "name": "BMS BCar",
     "version": "1.1.0",
-    "description": "Extension for BMS micro:bit",
+    "description": "Extension for BMS micro:bit-20200413e",
     "license": "MIT",
     "dependencies": {
         "core": "*",

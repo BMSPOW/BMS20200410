@@ -113,9 +113,9 @@ namespace BMS_CAR {
     }
     export enum enPos {
 
-        //% blockId="LeftState" block="LeftState"
+        //% blockId="LeftState" block="Left"
         LeftState = 1,
-        //% blockId="RightState" block="RightState"
+        //% blockId="RightState" block="Right"
         RightState = 0
     }
 
@@ -159,13 +159,13 @@ namespace BMS_CAR {
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="Motor_R_For"
+        //% blockId="Right_Z_Motor" block="Right_Fwd"
         Right_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="Motor_R_Back"
+        //% blockId="Right_F_Motor" block="Right_Back"
         Right_F_Motor = 2,
-        //% blockId="Left_Z_Motor" block="Motor_L_For"
+        //% blockId="Left_Z_Motor" block="Left_Fwd"
         Left_Z_Motor = 3,
-        //% blockId="Left_F_Motor" block="Motor_L_Back"
+        //% blockId="Left_F_Motor" block="Left_Back"
         Left_F_Motor = 4       
     }
 
@@ -450,7 +450,7 @@ namespace BMS_CAR {
      * *****************************************************************
      * @param index
      */
-    //% blockId=cbit_RGB_Car_Big2 block="BCar-RGB-HeadLight|Color %value"
+    //% blockId=RGB_Car_Big2 block="HeadLight|Color %value"
     //% weight=101
     //% blockGap=10
     //% color="#C814B8"
@@ -508,7 +508,7 @@ namespace BMS_CAR {
             }
         }
     }
-    //% blockId=cbit_RGB_Car_Big block="BCar-Led|Red %value1|Green %value2|Blue %value3"
+    //% blockId=RGB_Car_Big block="HeadLight|Red %value1|Green %value2|Blue %value3"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
@@ -533,7 +533,7 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=cbit_RGB_Car_Program block="3LED"
+    //% blockId=RGB_Car_Program block="3-RGBLED"
     //% weight=99
     //% blockGap=10
     //% color="#C814B8"
