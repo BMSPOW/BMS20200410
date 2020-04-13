@@ -596,7 +596,7 @@ namespace BMS_BCAR {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    //% blockId=Servo_Car block="Servo|Number %num|Angle %value"
+    //% blockId=Servo_Car block="Servo|Motor %num|Angle %value"
     //% weight=96
     //% blockGap=10
     //% color="#006400"
@@ -611,7 +611,7 @@ namespace BMS_BCAR {
 
     }
 
-    //% blockId=Avoid_Sensor block="Obstacle Sensor|Detect %value"
+    //% blockId=Avoid_Sensor block="Obstacle Sensor|Condition %value"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
@@ -651,7 +651,7 @@ namespace BMS_BCAR {
         return temp;
 
     }
-    //% blockId=Line_Sensor block="Line Tracking Sensor|Position %direct|Detect %value"
+    //% blockId=Line_Sensor block="Line Tracking |Sensor %direct|Detect %value"
     //% weight=94
     //% blockGap=10
     //% color="#006400"
