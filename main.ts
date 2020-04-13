@@ -113,9 +113,9 @@ namespace BMS_CAR {
     }
     export enum enPos {
 
-        //% blockId="LeftState" block="LeftState"
+        //% blockId="LeftState" block="Left"
         LeftState = 1,
-        //% blockId="RightState" block="RightState"
+        //% blockId="RightState" block="Right"
         RightState = 0
     }
 
@@ -159,13 +159,13 @@ namespace BMS_CAR {
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="Motor_R_For"
+        //% blockId="Right_Z_Motor" block="R_Fwd"
         Right_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="Motor_R_Back"
+        //% blockId="Right_F_Motor" block="R_Back"
         Right_F_Motor = 2,
-        //% blockId="Left_Z_Motor" block="Motor_L_For"
+        //% blockId="Left_Z_Motor" block="L_Fwd"
         Left_Z_Motor = 3,
-        //% blockId="Left_F_Motor" block="Motor_L_Back"
+        //% blockId="Left_F_Motor" block="L_Back"
         Left_F_Motor = 4       
     }
 
@@ -450,12 +450,12 @@ namespace BMS_CAR {
      * *****************************************************************
      * @param index
      */
-    //% blockId=cbit_RGB_Car_Big2 block="BCar-RGB-HeadLight|Color %value"
+    //% blockId=BCar-HeadLight block="HeadLight|Color %value"
     //% weight=101
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function RGB_Car_Big2(value: enColor): void {
+    export function BCar-HeadLight(value: enColor): void {
 
         switch (value) {
             case enColor.OFF: {
@@ -508,13 +508,13 @@ namespace BMS_CAR {
             }
         }
     }
-    //% blockId=cbit_RGB_Car_Big block="BCar-Led|Red %value1|Green %value2|Blue %value3"
+    //% blockId=BCar-HeadLight block="HeadLight|Red %value1|Green %value2|Blue %value3"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
     //% value1.min=0 value1.max=255 value2.min=0 value2.max=255 value3.min=0 value3.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function RGB_Car_Big(value1: number, value2: number, value3: number): void {
+    export function BCar-HeadLight(value1: number, value2: number, value3: number): void {
 
         let R = value1 * 16;
         let G = value2 * 16;
@@ -533,12 +533,12 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=cbit_RGB_Car_Program block="3LED"
+    //% blockId=BCar-RGB-LED block="3-RGB-LED"
     //% weight=99
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function RGB_Car_Program(): neopixel.Strip {
+    export function BCar-RGB-LED(): neopixel.Strip {
          
         if (!yahStrip) {
             yahStrip = neopixel.create(DigitalPin.P16, 3, NeoPixelMode.RGB);
@@ -547,12 +547,12 @@ namespace BMS_CAR {
     }
 
 
-    //% blockId=ultrasonic_car block="Ultrasonic(cm)"
+    //% blockId=BCar-ultrasonic block="Ultrasonic(cm)"
     //% color="#006400"
     //% weight=98
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Ultrasonic_Car(): number {
+    export function BCar-Ultrasonic(): number {
 
         // send pulse
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
@@ -567,12 +567,12 @@ namespace BMS_CAR {
         return d / 58;
     }
 
-    //% blockId=Music_Car block="BCar-Music|%index"
+    //% blockId=BCar-Music block="Music|%index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Music_Car(index: enMusic): void {
+    export function BCar-Music(index: enMusic): void {
         switch (index) {
             case enMusic.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
             case enMusic.birthday: music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once); break;
@@ -596,13 +596,13 @@ namespace BMS_CAR {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    //% blockId=Servo_Car block="Servo|Number %num|Angle %value"
+    //% blockId=BCar-Servo block="Servo|Number %num|Angle %value"
     //% weight=96
     //% blockGap=10
     //% color="#006400"
     //% num.min=1 num.max=3 value.min=0 value.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=9
-    export function Servo_Car(num: enServo, value: number): void {
+    export function BCar-Servo(num: enServo, value: number): void {
 
         // 50hz: 20,000 us
         let us = (value * 1800 / 180 + 600); // 0.6 ~ 2.4

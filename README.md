@@ -1,6 +1,6 @@
 ﻿# BMS
 
-BMSPOW 20200413a
+BMSPOW 20200413b
 ## License
 
 MIT
