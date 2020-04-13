@@ -113,9 +113,9 @@ namespace BMS_CAR {
     }
     export enum enPos {
 
-        //% blockId="LeftState" block="LeftState"
+        //% blockId="LeftState" block="Left"
         LeftState = 1,
-        //% blockId="RightState" block="RightState"
+        //% blockId="RightState" block="Right"
         RightState = 0
     }
 
