@@ -159,13 +159,13 @@ namespace BMS_CAR {
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="R_Fwd"
+        //% blockId="Right_Z_Motor" block="Right_Fwd"
         Right_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="R_Back"
+        //% blockId="Right_F_Motor" block="Right_Back"
         Right_F_Motor = 2,
-        //% blockId="Left_Z_Motor" block="L_Fwd"
+        //% blockId="Left_Z_Motor" block="Left_Fwd"
         Left_Z_Motor = 3,
-        //% blockId="Left_F_Motor" block="L_Back"
+        //% blockId="Left_F_Motor" block="Left_Back"
         Left_F_Motor = 4       
     }
 
@@ -450,12 +450,12 @@ namespace BMS_CAR {
      * *****************************************************************
      * @param index
      */
-    //% blockId=BCar-HeadLight block="HeadLight|Color %value"
+    //% blockId=BCar_Headlight block="Headlight|Color %value"
     //% weight=101
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function BCar-HeadLight(value: enColor): void {
+    export function Headlight(value: enColor): void {
 
         switch (value) {
             case enColor.OFF: {
@@ -508,13 +508,13 @@ namespace BMS_CAR {
             }
         }
     }
-    //% blockId=BCar-HeadLight block="HeadLight|Red %value1|Green %value2|Blue %value3"
+    //% blockId=BCar-Headlight-RGB block="Headlight|Red %value1|Green %value2|Blue %value3"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
     //% value1.min=0 value1.max=255 value2.min=0 value2.max=255 value3.min=0 value3.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function BCar-HeadLight(value1: number, value2: number, value3: number): void {
+    export function Headlight-RGB(value1: number, value2: number, value3: number): void {
 
         let R = value1 * 16;
         let G = value2 * 16;
@@ -533,12 +533,12 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=BCar-RGB-LED block="3-RGB-LED"
+    //% blockId=BCar-3RGBLED block="3-RGBLED"
     //% weight=99
     //% blockGap=10
     //% color="#C814B8"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function BCar-RGB-LED(): neopixel.Strip {
+    export function BCar-3RGBLED(): neopixel.Strip {
          
         if (!yahStrip) {
             yahStrip = neopixel.create(DigitalPin.P16, 3, NeoPixelMode.RGB);
@@ -547,12 +547,12 @@ namespace BMS_CAR {
     }
 
 
-    //% blockId=BCar-ultrasonic block="Ultrasonic(cm)"
+    //% blockId=ultrasonic_car block="Ultrasonic(cm)"
     //% color="#006400"
     //% weight=98
     //% blockGap=10
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function BCar-Ultrasonic(): number {
+    export function Ultrasonic_Car(): number {
 
         // send pulse
         pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
@@ -567,12 +567,12 @@ namespace BMS_CAR {
         return d / 58;
     }
 
-    //% blockId=BCar-Music block="Music|%index"
+    //% blockId=Music_Car block="Music|%index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function BCar-Music(index: enMusic): void {
+    export function Music_Car(index: enMusic): void {
         switch (index) {
             case enMusic.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
             case enMusic.birthday: music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once); break;
@@ -596,13 +596,13 @@ namespace BMS_CAR {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    //% blockId=BCar-Servo block="Servo|Number %num|Angle %value"
+    //% blockId=Servo_Car block="Servo|Number %num|Angle %value"
     //% weight=96
     //% blockGap=10
     //% color="#006400"
     //% num.min=1 num.max=3 value.min=0 value.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=9
-    export function BCar-Servo(num: enServo, value: number): void {
+    export function Servo_Car(num: enServo, value: number): void {
 
         // 50hz: 20,000 us
         let us = (value * 1800 / 180 + 600); // 0.6 ~ 2.4
@@ -611,12 +611,12 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=Avoid_Sensor block="Obstacle Sensor|Detect %value"
+    //% blockId=Obstacle_Sensor block="Obstacle Sensor|Detect %value"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
-    export function Avoid_Sensor(value: enAvoidState): boolean {
+    export function Obstacle_Sensor(value: enAvoidState): boolean {
 
         let temp: boolean = false;
         pins.digitalWritePin(DigitalPin.P9, 0);
@@ -696,12 +696,12 @@ namespace BMS_CAR {
         return temp;
 
     }
-    //% blockId=CarCtrl block="Car-Control|%index"
+    //% blockId=BCarCtrl block="Car operation|%index"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function CarCtrl(index: CarState): void {
+    export function BCarCtrl(index: CarState): void {
         switch (index) {
             case CarState.Car_Run: Car_run(255); break;
             case CarState.Car_Back: Car_back(255); break;
@@ -712,13 +712,13 @@ namespace BMS_CAR {
             case CarState.Car_SpinRight: Car_spinright(255); break;
         }
     }
-    //% blockId=cbit_CarCtrlSpeed block="Car-Control|%index|Speed %speed"
+    //% blockId=BCarCtrlSpeed block="Car operation|%index|Speed %speed"
     //% weight=92
     //% blockGap=10
     //% speed.min=0 speed.max=255
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function CarCtrlSpeed(index: CarState, speed: number): void {
+    export function BCarCtrlSpeed(index: CarState, speed: number): void {
         switch (index) {
             case CarState.Car_Run: Car_run(speed); break;
             case CarState.Car_Back: Car_back(speed); break;
@@ -729,13 +729,13 @@ namespace BMS_CAR {
             case CarState.Car_SpinRight: Car_spinright(speed); break;
         }
     }
-    //% blockId=AloneCtrlSpeed block="Motor|%index|Speed %speed"
+    //% blockId=MotorCtrlSpeed block="Motor|%index|Speed %speed"
     //% weight=91
     //% blockGap=10
     //% speed.min=0 speed.max=255
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function AloneCtrlSpeed(index: AloneState, speed: number): void {
+    export function MotorCtrlSpeed(index: AloneState, speed: number): void {
         switch (index) {
             case AloneState.Right_Z_Motor: Right_Z_run(speed); break;
             case AloneState.Right_F_Motor: Right_F_run(speed); break;
