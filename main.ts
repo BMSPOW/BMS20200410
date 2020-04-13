@@ -2,7 +2,7 @@
 R
 modified from liusen
 load dependency
-"BMS": "file:../BMS20200410"
+"BMS": "file:../BMS20200413"
 */
 
 
@@ -113,9 +113,9 @@ namespace BMS_CAR {
     }
     export enum enPos {
 
-        //% blockId="LeftState" block="Left"
+        //% blockId="LeftState" block="LeftState"
         LeftState = 1,
-        //% blockId="RightState" block="Right"
+        //% blockId="RightState" block="RightState"
         RightState = 0
     }
 
