@@ -40,6 +40,8 @@ namespace BMS_BUZZER {
 
 
 
+
+
 //% color="#006400" weight=20 icon="\uf1b9"
 namespace BMS_CAR {
 
@@ -111,24 +113,24 @@ namespace BMS_CAR {
     }
     export enum enPos {
 
-        //% blockId="LeftState" block="左边状态"
+        //% blockId="LeftState" block="LeftState"
         LeftState = 1,
-        //% blockId="RightState" block="右边状态"
+        //% blockId="RightState" block="RightState"
         RightState = 0
     }
 
     export enum enLineState {
-        //% blockId="White" block="白线"
+        //% blockId="White" block="White"
         White = 0,
-        //% blockId="Black" block="黑线"
+        //% blockId="Black" block="Black"
         Black = 1
 
     }
     
     export enum enAvoidState {
-        //% blockId="OBSTACLE" block="有障碍物"
+        //% blockId="OBSTACLE" block="Obstacle"
         OBSTACLE = 0,
-        //% blockId="NOOBSTACLE" block="无障碍物"
+        //% blockId="NOOBSTACLE" block="non-Obstacle"
         NOOBSTACLE = 1
 
     }
@@ -141,29 +143,29 @@ namespace BMS_CAR {
         S3
     }
     export enum CarState {
-        //% blockId="Car_Run" block="前行"
+        //% blockId="Car_Run" block="Forward"
         Car_Run = 1,
-        //% blockId="Car_Back" block="后退"
+        //% blockId="Car_Back" block="Backward"
         Car_Back = 2,
-        //% blockId="Car_Left" block="左转"
+        //% blockId="Car_Left" block="TurnLeft"
         Car_Left = 3,
-        //% blockId="Car_Right" block="右转"
+        //% blockId="Car_Right" block="TurnRight"
         Car_Right = 4,
-        //% blockId="Car_Stop" block="停止"
+        //% blockId="Car_Stop" block="Stop"
         Car_Stop = 5,
-        //% blockId="Car_SpinLeft" block="原地左旋"
+        //% blockId="Car_SpinLeft" block="SpinLeft"
         Car_SpinLeft = 6,
-        //% blockId="Car_SpinRight" block="原地右旋"
+        //% blockId="Car_SpinRight" block="SpinRight"
         Car_SpinRight = 7         
     }
     export enum AloneState {
-        //% blockId="Right_Z_Motor" block="右侧电机正转"
+        //% blockId="Right_Z_Motor" block="Motor_R_For"
         Right_Z_Motor = 1,
-        //% blockId="Right_F_Motor" block="右侧电机反转"
+        //% blockId="Right_F_Motor" block="Motor_R_Back"
         Right_F_Motor = 2,
-        //% blockId="Left_Z_Motor" block="左侧电机正转"
+        //% blockId="Left_Z_Motor" block="Motor_L_For"
         Left_Z_Motor = 3,
-        //% blockId="Left_F_Motor" block="左侧电机反转"
+        //% blockId="Left_F_Motor" block="Motor_L_Back"
         Left_F_Motor = 4       
     }
 
@@ -240,11 +242,13 @@ namespace BMS_CAR {
         setPwm(15, 0, speed);
         setPwm(14, 0, 0);
         //pins.digitalWritePin(DigitalPin.P16, 1);
-       // pins.analogWritePin(AnalogPin.P1, 1023-speed); //速度控制
+       // pins.analogWritePin(AnalogPin.P1, 1023-speed); //Speed Control
 
-       // pins.analogWritePin(AnalogPin.P0, speed);//速度控制
+       // pins.analogWritePin(AnalogPin.P0, speed);//Speed Control
        // pins.digitalWritePin(DigitalPin.P8, 0);
     }
+
+
    function Left_Z_run(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
@@ -261,6 +265,8 @@ namespace BMS_CAR {
         //setPwm(15, 0, 0);
         //setPwm(14, 0, 0);
     }
+
+
    function Left_F_run(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
@@ -277,6 +283,8 @@ namespace BMS_CAR {
         //setPwm(15, 0, 0);
         //setPwm(14, 0, 0);
     }    
+
+
      function Right_Z_run(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
@@ -293,6 +301,8 @@ namespace BMS_CAR {
         setPwm(15, 0, speed);
         setPwm(14, 0, 0);
     }
+
+
      function Right_F_run(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
@@ -309,6 +319,8 @@ namespace BMS_CAR {
         setPwm(15, 0, 0);
         setPwm(14, 0, speed);
     }    
+
+
     function Car_back(speed: number) {
 
         speed = speed * 16; // map 350 to 4096
@@ -326,9 +338,9 @@ namespace BMS_CAR {
         setPwm(14, 0, speed);
 
         //pins.digitalWritePin(DigitalPin.P16, 0);
-        //pins.analogWritePin(AnalogPin.P1, speed); //速度控制
+        //pins.analogWritePin(AnalogPin.P1, speed); //Speed Control
 
-        //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//速度控制
+        //pins.analogWritePin(AnalogPin.P0, 1023 - speed);//Speed Control
         //pins.digitalWritePin(DigitalPin.P8, 1);
     }
 
@@ -432,11 +444,13 @@ namespace BMS_CAR {
 
     }
 
+
+
     /**
      * *****************************************************************
      * @param index
      */
-    //% blockId=cbit_RGB_Car_Big2 block="小车RGB探照灯|选择车灯颜色 %value"
+    //% blockId=cbit_RGB_Car_Big2 block="BCar-RGB-HeadLight|Color %value"
     //% weight=101
     //% blockGap=10
     //% color="#C814B8"
@@ -494,7 +508,7 @@ namespace BMS_CAR {
             }
         }
     }
-    //% blockId=cbit_RGB_Car_Big block="小车RGB探照灯|红色 %value1|绿色 %value2|蓝色 %value3"
+    //% blockId=cbit_RGB_Car_Big block="BCar-Led|Red %value1|Green %value2|Blue %value3"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
@@ -519,7 +533,7 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=cbit_RGB_Car_Program block="七彩流水灯"
+    //% blockId=cbit_RGB_Car_Program block="3LED"
     //% weight=99
     //% blockGap=10
     //% color="#C814B8"
@@ -533,7 +547,7 @@ namespace BMS_CAR {
     }
 
 
-    //% blockId=cbit_ultrasonic_car block="超声波返回(cm)"
+    //% blockId=ultrasonic_car block="Ultrasonic(cm)"
     //% color="#006400"
     //% weight=98
     //% blockGap=10
@@ -553,7 +567,7 @@ namespace BMS_CAR {
         return d / 58;
     }
 
-    //% blockId=cbit_Music_Car block="小车音乐播放|%index"
+    //% blockId=Music_Car block="BCar-Music|%index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -582,7 +596,7 @@ namespace BMS_CAR {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    //% blockId=cbit_Servo_Car block="小车舵机|编号 %num|角度 %value"
+    //% blockId=Servo_Car block="Servo|Number %num|Angle %value"
     //% weight=96
     //% blockGap=10
     //% color="#006400"
@@ -597,7 +611,7 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=cbit_Avoid_Sensor block="避障传感器|检测到 %value"
+    //% blockId=Avoid_Sensor block="Obstacle Sensor|Detect %value"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
@@ -637,7 +651,7 @@ namespace BMS_CAR {
         return temp;
 
     }
-    //% blockId=cbit_Line_Sensor block="巡线传感器|位置 %direct|检测到 %value"
+    //% blockId=Line_Sensor block="Line Tracking Sensor|Position %direct|Detect %value"
     //% weight=94
     //% blockGap=10
     //% color="#006400"
@@ -682,7 +696,7 @@ namespace BMS_CAR {
         return temp;
 
     }
-    //% blockId=cbit_CarCtrl block="小车控制|%index"
+    //% blockId=CarCtrl block="Car-Control|%index"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
@@ -698,7 +712,7 @@ namespace BMS_CAR {
             case CarState.Car_SpinRight: Car_spinright(255); break;
         }
     }
-    //% blockId=cbit_CarCtrlSpeed block="小车控制|%index|速度 %speed"
+    //% blockId=cbit_CarCtrlSpeed block="Car-Control|%index|Speed %speed"
     //% weight=92
     //% blockGap=10
     //% speed.min=0 speed.max=255
@@ -715,7 +729,7 @@ namespace BMS_CAR {
             case CarState.Car_SpinRight: Car_spinright(speed); break;
         }
     }
-    //% blockId=cbit_AloneCtrlSpeed block="单独电机|%index|速度 %speed"
+    //% blockId=AloneCtrlSpeed block="Motor|%index|Speed %speed"
     //% weight=91
     //% blockGap=10
     //% speed.min=0 speed.max=255
