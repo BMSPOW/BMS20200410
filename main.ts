@@ -2,7 +2,7 @@
 R
 modified from liusen
 load dependency
-"BMS": "file:../BMS20200410"
+"BMS-BCar": "file:../BMS20200410"
 */
 
 
@@ -43,7 +43,7 @@ namespace BMS_BUZZER {
 
 
 //% color="#006400" weight=20 icon="\uf1b9"
-namespace BMS_CAR {
+namespace BMS_BCAR {
 
     const PCA9685_ADD = 0x41
     const MODE1 = 0x00
