@@ -450,7 +450,7 @@ namespace BMS_CAR {
      * *****************************************************************
      * @param index
      */
-    //% blockId=cbit_RGB_Car_Big2 block="BCar-RGB-HeadLight|Color %value"
+    //% blockId=RGB_Car_Big2 block="HeadLight|Color %value"
     //% weight=101
     //% blockGap=10
     //% color="#C814B8"
@@ -508,7 +508,7 @@ namespace BMS_CAR {
             }
         }
     }
-    //% blockId=cbit_RGB_Car_Big block="BCar-Led|Red %value1|Green %value2|Blue %value3"
+    //% blockId=RGB_Car_Big block="HeadLight|Red %value1|Green %value2|Blue %value3"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
@@ -533,7 +533,7 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=cbit_RGB_Car_Program block="3LED"
+    //% blockId=cbit_RGB_Car_Program block="3-RGB-LED"
     //% weight=99
     //% blockGap=10
     //% color="#C814B8"
