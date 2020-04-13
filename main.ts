@@ -2,7 +2,7 @@
 R
 modified from liusen
 load dependency
-"BMS": "file:../BMS20200410"
+"BMS": "file:../BMS20200413f"
 */
 
 
@@ -450,7 +450,7 @@ namespace BMS_CAR {
      * *****************************************************************
      * @param index
      */
-    //% blockId=RGB_Car_Big2 block="HeadLight|Color %value"
+    //% blockId=cbit_RGB_Car_Big2 block="BCar-RGB-HeadLight|Color %value"
     //% weight=101
     //% blockGap=10
     //% color="#C814B8"
@@ -508,7 +508,7 @@ namespace BMS_CAR {
             }
         }
     }
-    //% blockId=RGB_Car_Big block="HeadLight|Red %value1|Green %value2|Blue %value3"
+    //% blockId=cbit_RGB_Car_Big block="BCar-Led|Red %value1|Green %value2|Blue %value3"
     //% weight=100
     //% blockGap=10
     //% color="#C814B8"
@@ -533,7 +533,7 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=RGB_Car_Program block="3-RGBLED"
+    //% blockId=cbit_RGB_Car_Program block="3LED"
     //% weight=99
     //% blockGap=10
     //% color="#C814B8"
