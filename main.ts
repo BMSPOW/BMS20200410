@@ -567,7 +567,7 @@ namespace BMS_CAR {
         return d / 58;
     }
 
-    //% blockId=cbit_Music_Car block="BCar-Music|%index"
+    //% blockId=Music_Car block="Play-Music|%index"
     //% weight=97
     //% blockGap=10
     //% color="#006400"
@@ -596,7 +596,7 @@ namespace BMS_CAR {
             case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
-    //% blockId=cbit_Servo_Car block="小车舵机|编号 %num|角度 %value"
+    //% blockId=Servo_Car block="Servo|Number %num|Angle %value"
     //% weight=96
     //% blockGap=10
     //% color="#006400"
@@ -611,7 +611,7 @@ namespace BMS_CAR {
 
     }
 
-    //% blockId=cbit_Avoid_Sensor block="避障传感器|检测到 %value"
+    //% blockId=Avoid_Sensor block="Obstacle Sensor|Detect %value"
     //% weight=95
     //% blockGap=10
     //% color="#006400"
@@ -651,7 +651,7 @@ namespace BMS_CAR {
         return temp;
 
     }
-    //% blockId=cbit_Line_Sensor block="巡线传感器|位置 %direct|检测到 %value"
+    //% blockId=Line_Sensor block="Line Tracking Sensor|Position %direct|Detect %value"
     //% weight=94
     //% blockGap=10
     //% color="#006400"
@@ -696,7 +696,7 @@ namespace BMS_CAR {
         return temp;
 
     }
-    //% blockId=cbit_CarCtrl block="小车控制|%index"
+    //% blockId=CarCtrl block="Operation|%index"
     //% weight=93
     //% blockGap=10
     //% color="#006400"
@@ -712,7 +712,7 @@ namespace BMS_CAR {
             case CarState.Car_SpinRight: Car_spinright(255); break;
         }
     }
-    //% blockId=cbit_CarCtrlSpeed block="小车控制|%index|速度 %speed"
+    //% blockId=CarCtrlSpeed block="Operation|%index|Speed %speed"
     //% weight=92
     //% blockGap=10
     //% speed.min=0 speed.max=255
@@ -729,13 +729,13 @@ namespace BMS_CAR {
             case CarState.Car_SpinRight: Car_spinright(speed); break;
         }
     }
-    //% blockId=cbit_AloneCtrlSpeed block="单独电机|%index|速度 %speed"
+    //% blockId=MotorCtrlSpeed block="Motor|%index|Speed %speed"
     //% weight=91
     //% blockGap=10
     //% speed.min=0 speed.max=255
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function AloneCtrlSpeed(index: AloneState, speed: number): void {
+    export function MotorCtrlSpeed(index: AloneState, speed: number): void {
         switch (index) {
             case AloneState.Right_Z_Motor: Right_Z_run(speed); break;
             case AloneState.Right_F_Motor: Right_F_run(speed); break;
