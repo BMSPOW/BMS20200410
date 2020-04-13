@@ -2,7 +2,7 @@
 R
 modified from liusen
 load dependency
-"BMS": "file:../BMS20200410"
+"BMS BCar": "file:../BMS20200410"
 */
 
 
